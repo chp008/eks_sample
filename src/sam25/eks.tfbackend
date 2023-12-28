@@ -1,0 +1,3 @@
+bucket = "terraform-state-188424177863"
+key    = "rc/eks/terraform.tfstate"
+region = "cn-northwest-1"
