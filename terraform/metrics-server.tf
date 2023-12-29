@@ -11,13 +11,14 @@ provider "helm" {
 }
 
 resource "helm_release" "metrics-server" {
+  count =0
   name = "metrics-server"
-
   repository = "https://kubernetes-sigs.github.io/metrics-server/"
   chart      = "metrics-server"
   namespace  = "kube-system"
   version    = "3.8.2"
-
+  recreate_pods =true
+  force_update =true
   values = [
     file("${path.module}/metrics-server-values.yaml")
   ]
